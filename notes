@@ -1,0 +1,11 @@
+# pour la retrocompatibilité #
+const / let => var pour etre compatible ie9 : babel
+
+# audit de sécu d'un package #
+node security package (nsp dans github)
+
+# aide a l'install de node #
+nvm
+ex: `nvm install --lts`
+
+
