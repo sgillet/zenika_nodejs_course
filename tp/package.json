@@ -9,6 +9,7 @@
   "author": "Sébastien GILLET",
   "license": "ISC",
   "dependencies": {
+    "chalk": "^2.2.0",
     "lodash": "^4.17.4"
   }
 }

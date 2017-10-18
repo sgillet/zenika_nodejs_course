@@ -1,4 +1,6 @@
 'use strict';
+const _ = require('lodash');
+const chalk = require('chalk');
 const data = require('./contacts.json');
 
 class Contact {
@@ -17,16 +19,12 @@ class Contact {
 class ContactService {
   constructor() {
     this.contacts = data.map((contact) => {
-      return new Contact(contact.id, contact.firstName, contact.lastName, contact.phone);
+      return new Contact(contact.id, chalk.blue(contact.firstName), chalk.red(contact.lastName), contact.phone);
     });
   }
 
-  get() {
-    return this.contacts;
-  }
-
   print() {
-    this.get().map((contact) => {
+    this.contacts.map((contact) => {
       console.log(contact.toString());
     });
   }
