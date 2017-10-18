@@ -1,0 +1,14 @@
+{
+  "name": "zenika_tp",
+  "version": "1.0.0",
+  "description": "Zenika NodeJS tp",
+  "main": "contacts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sébastien GILLET",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.4"
+  }
+}
