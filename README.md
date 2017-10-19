@@ -3,6 +3,9 @@ NodeJS formation in Zenika (2017.10.18-20)
 
 ## Test-it ##
 
+### List all contacts ###
+`node index.js list`
+
 ### Add a contact ###
 `node index.js add --firstName seb --lastName gillet`
 
@@ -15,8 +18,12 @@ NodeJS formation in Zenika (2017.10.18-20)
 const / let => var pour etre compatible ie9 : babel
 
 ## audit de sécu d'un package ##
-node security package (nsp dans github)
+[node security package (nsp dans github)](https://nodesecurity.io/)
+
 
 ## aide a l'install de node ##
 nvm
 ex: `nvm install --lts`
+
+## liens utiles ##
+[comparatif http clients](https://npmcompare.com/compare/express,hapi,request,restify)

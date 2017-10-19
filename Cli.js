@@ -3,6 +3,13 @@ const yargs = require("yargs");
 exports.init = function(contactService) {
   yargs
     .command({
+      command: 'list',
+      desc: 'List contacts',
+      handler: argv => contactService.read(() => {
+        contactService.print();
+      })
+    })
+    .command({
       command: 'add',
       desc: 'Add contact',
       builder: (ygs) => {
