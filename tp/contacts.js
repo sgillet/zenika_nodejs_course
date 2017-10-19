@@ -1,7 +1,9 @@
 'use strict';
 const _ = require('lodash');
 const chalk = require('chalk');
+var yargs = require("yargs");
 const data = require('./contacts.json');
+
 
 class Contact {
   constructor(id, firstName, lastName, phone) {
@@ -12,14 +14,18 @@ class Contact {
   }
 
   toString() {
-    return `${this.firstName} ${this.lastName}, phone: ${this.phone}. id: ${this.id}`
+    if(yargs.argv.colors) {
+      return `${chalk.red(this.firstName)} ${chalk.blue(this.lastName)}, phone: ${this.phone}. id: ${this.id}`;
+    } else {
+      return `${this.firstName} ${this.lastName}, phone: ${this.phone}. id: ${this.id}`;
+    }
   }
 }
 
 class ContactService {
   constructor() {
     this.contacts = data.map((contact) => {
-      return new Contact(contact.id, chalk.blue(contact.firstName), chalk.red(contact.lastName), contact.phone);
+      return new Contact(contact.id, contact.firstName, contact.lastName, contact.phone);
     });
   }
 
@@ -31,4 +37,6 @@ class ContactService {
 }
 
 let myContactService = new ContactService();
-myContactService.print();
+if(yargs.argv.list) {
+  myContactService.print();
+}
