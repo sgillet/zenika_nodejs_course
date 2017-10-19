@@ -1,27 +1,5 @@
-'use strict';
-const _ = require('lodash');
-const chalk = require('chalk');
-const yargs = require("yargs");
+const Contact = require('./Contact');
 const fs = require("fs");
-
-
-class Contact {
-  constructor(contact) {
-    this.id = contact.id || '';
-    this.firstName = contact.firstName || '';
-    this.lastName = contact.lastName || '';
-    this.address = contact.address || '';
-    this.phone = contact.phone || '';
-  }
-
-  toString() {
-    if(yargs.argv.colors) {
-      return `${chalk.red(this.firstName)} ${chalk.blue(this.lastName)}, phone: ${this.phone}. id: ${this.id}`;
-    } else {
-      return `${this.firstName} ${this.lastName}, phone: ${this.phone}. id: ${this.id}`;
-    }
-  }
-}
 
 class FileContactService {
   constructor() {
@@ -103,46 +81,4 @@ class FileContactService {
 }
 
 
-let contactService = new FileContactService();
-
-yargs
-  .command({
-    command: 'add',
-    desc: 'Add contact',
-    builder: (ygs) => {
-      ygs
-        .option('firstName', {
-          alias: 'f',
-          desc: 'Contact\'s first name',
-          demand: true,
-          type: 'string'
-        })
-        .option('lastName', {
-          alias: 'l',
-          desc: 'Contact\'s last name',
-          demand: true,
-          type: 'string'
-        })
-    },
-    handler: argv => contactService.add(argv.firstName, argv.lastName, () => {
-      contactService.print();
-    })
-  })
-  .command({
-    command: 'delete',
-    desc: 'Delete contact',
-    builder: (ygs) => {
-      ygs
-        .option('id', {
-          alias: 'i',
-          desc: 'Contact\'s id',
-          demand: true,
-          type: 'string'
-        })
-    },
-    handler: argv => contactService.delete(Number(argv.id), () => {
-      contactService.print();
-    })
-  })
-  .help()
-  .argv;
+module.exports = FileContactService;

@@ -4,10 +4,10 @@ NodeJS formation in Zenika (2017.10.18-20)
 ## Test-it ##
 
 ### Add a contact ###
-`node contacts.js add --firstName seb --lastName gillet`
+`node index.js add --firstName seb --lastName gillet`
 
 ### Delete a contact ###
-`node contacts.js delete --id {id}`
+`node index.js delete --id {id}`
 
 
 # Infos pratiques #

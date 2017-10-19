@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Zenika NodeJS tp",
   "keywords": "zenika tutorial nodejs",
-  "main": "contacts.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,5 +13,8 @@
     "chalk": "^2.2.0",
     "lodash": "^4.17.4",
     "yargs": "^9.0.1"
+  },
+  "scripts": {
+    "hello": "echo 'hello'"
   }
 }
