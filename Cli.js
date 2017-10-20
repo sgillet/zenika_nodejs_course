@@ -1,4 +1,5 @@
 const yargs = require("yargs");
+const server = require('./Server');
 
 exports.init = function(contactService) {
   yargs
@@ -46,6 +47,11 @@ exports.init = function(contactService) {
       handler: argv => contactService.delete(Number(argv.id), () => {
         contactService.print();
       })
+    })
+    .command({
+      command: 'serve',
+      desc: 'Serve contact html app',
+      handler: argv => server.init(contactService)
     })
     .help()
     .argv;
