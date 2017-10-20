@@ -1,0 +1,30 @@
+{
+  "name": "formation-nodejs-tp-04",
+  "version": "1.0.0",
+  "description": "Contacts API",
+  "keywords": ["zenika", "tp", "api"],
+  "homepage": "https://zenika.com/",
+  "repository": "https://github.com/Zenika/zenika-formation-framework",
+  "author": "Zenika",
+  "contributors": [
+    "Zenika Consultant TS <zenika.consultant.ts@zenika.com>",
+    "Zenika Consultant React <zenika.consultat.react@zenika.com>"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint *.js"
+  },
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "lodash": "^4.16.4",
+    "yargs": "^6.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.2.2"
+  },
+  "license": "UNLICENCED",
+  "engines": {
+    "node" : ">=6.0.0 <7"
+  }
+}
