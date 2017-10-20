@@ -18,6 +18,9 @@ NodeJS formation in Zenika (2017.10.18-20)
 ## pour la retrocompatibilité ##
 const / let => var pour etre compatible ie9 : babel
 
+## perfs ##
+* Favoriser les `Promise.all` afin de paralléliser les appels
+
 ## audit de sécu d'un package ##
 [node security package (nsp dans github)](https://nodesecurity.io/)
 
