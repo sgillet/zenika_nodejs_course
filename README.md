@@ -14,6 +14,7 @@ NodeJS formation in Zenika (2017.10.18-20)
 
 
 # Infos pratiques #
+[Url du tuto berthelot.io](http://berthelot.io/)
 ## pour la retrocompatibilité ##
 const / let => var pour etre compatible ie9 : babel
 
@@ -24,6 +25,9 @@ const / let => var pour etre compatible ie9 : babel
 ## aide a l'install de node ##
 nvm
 ex: `nvm install --lts`
-
+## debug ##
+* mocha
+** chai (extended assertions : should.be.... expect().to.equals())
+** sinon (mock / spy on functions)
 ## liens utiles ##
 [comparatif http clients](https://npmcompare.com/compare/express,hapi,request,restify)
