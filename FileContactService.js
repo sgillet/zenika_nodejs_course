@@ -70,8 +70,17 @@ class FileContactService {
     });
   }
 
-  get() {
-    return this.contacts;
+  get(id, callback) {
+    this.read((err, contacts) => {
+      if(err) {
+        console.error(err);
+        return;
+      }
+      let contactFound = contacts.find((contact) => {
+        return contact.id === id;
+      });
+      callback(null, contactFound);
+    });
   }
 
   print() {

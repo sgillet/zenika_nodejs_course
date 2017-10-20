@@ -4,7 +4,16 @@ exports.route = (express, contactService) => {
       if(err) {
         res.send(err)
       }
-      res.send('data');
+      res.send(data);
+    });
+  });
+  express.get('/rest/contacts/:id', function (req, res) {
+    const id = Number(req.params.id);
+    contactService.get(id, (err, data) => {
+      if(err) {
+        res.send(err)
+      }
+      res.send(data);
     });
   });
 };
